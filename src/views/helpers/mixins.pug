@@ -1,3 +1,8 @@
 mixin svg(name)
 	svg&attributes(attributes)
 		use(xlink:href=`${baseDir}img/sprites/sprite.svg#${name}`)
+		
+mixin icon(name,mod)
+	- mod = mod || ''
+	svg(class="icon icon-" + name + ' ' + mod)
+		use(xlink:href="#icon-" + name)
